@@ -4,4 +4,4 @@ import ReactDOM from 'react-dom';
 
 const wrapper = document.getElementById('app');
 // eslint-disable-next-line react/jsx-filename-extension
-ReactDOM.render(<div>WorkingCopy</div>, wrapper);
+ReactDOM.render(<div>Working</div>, wrapper);
