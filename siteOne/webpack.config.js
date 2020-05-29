@@ -23,6 +23,10 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    inline:true,
+    port: 8080
+  },
 
   plugins: [
     new HtmlWebPackPlugin({
