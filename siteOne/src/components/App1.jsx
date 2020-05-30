@@ -1,21 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const App1 = (props) => {
-    
-  
-    
+const App1 = () => {
+
+  const [message, setMessage] = useState('');
+
+  const postWindowMessage = (message) => {
+    window.top.postMessage(
+      JSON.stringify({
+        error: false,
+        message: message
+      }),'*')
+  }
     
     return (
   
       <div>
         <h1>Site One</h1>
-        { window.top.postMessage(
-               JSON.stringify({
-                 error: false,
-                 message: "Hello World"
-               }),
-               '*'
-             )}
+        {postWindowMessage(message) }
+             <input value={message} onChange={e => setMessage(e.target.value)}  placeholder='Type message site one'/>
         
         </div>
     );
