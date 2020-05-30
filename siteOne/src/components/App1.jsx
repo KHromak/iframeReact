@@ -15,10 +15,10 @@ const App1 = () => {
     return (
   
       <div>
-        <h1>Site One</h1>
+        <h1>Site A</h1>
         {postWindowMessage(message) }
-             <input value={message} onChange={e => setMessage(e.target.value)}  placeholder='Type message site one'/>
-        
+             <input value={message} onChange={e => setMessage(e.target.value)}  placeholder='Type message site A'/>
+            
         </div>
     );
   };

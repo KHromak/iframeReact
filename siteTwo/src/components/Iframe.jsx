@@ -1,30 +1,12 @@
 import React, { useEffect } from 'react'
 
-const Iframe = ({src, height, width, dispatchMessage}, props) => {    
+const Iframe = ({ src, height, width, iframeRef }, props) => {
 
-      useEffect(() => {
-      const handler = event => {
-      const data = event.data;
-     
-      if (typeof(data) == 'string'){
-        let parsedData = JSON.parse(data);
-        dispatchMessage(parsedData.message);
-      }
-    }
-    
-    window.addEventListener("message", handler)
-   
-    return () => window.removeEventListener("message", handler)
-  }, []) 
-    
-      return(         
-        <div>            
-          <iframe src={src} height={height} width={width}  />     
-        </div>
-      )
-    
-  };
+  return (
+    <div>
+      <iframe src={src} height={height} width={width} id={'iframe'} ref={iframeRef} id={'the_iframe'} />
+    </div>
+  )
+};
 
-
-
-  export default Iframe;
+export default Iframe;
