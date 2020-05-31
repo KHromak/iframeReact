@@ -8,7 +8,6 @@ const App2 = (props) => {
 
   const dispatch = useDispatch();
   const dispatchMessage = (message) => dispatch(postMessage(message));
-  const iframeRef = createRef();
 
   useEffect(() => {
 
@@ -29,7 +28,7 @@ const App2 = (props) => {
   return (
     <div>
       <h1>Site B</h1>
-      <Iframe src="http://localhost:8080/" height="200" width="500" iframeRef={iframeRef} />
+      <Iframe src="http://localhost:8080/" height="200" width="500" />
       <p> Recieve message site B</p>
       <p> {props.message} </p>
     </div>
